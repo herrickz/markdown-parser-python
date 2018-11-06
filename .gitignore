@@ -1,0 +1,9 @@
+lib/
+include/
+bin/
+__pycache__/
+pip-selfcheck.json
+pyvenv.cfg
+output.html
+parser.out
+parsetab.py
