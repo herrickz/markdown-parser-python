@@ -38,7 +38,7 @@ def t_BLOCKQUOTE(t):
     return t
 
 def t_ORDERED_LIST(t):
-    r'[1-9]\..+\n?'
+    r'([1-9]\..+\n?)+'
 
     return t
 
