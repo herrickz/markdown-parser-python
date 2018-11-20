@@ -51,19 +51,19 @@ class InlineTextReducer:
 
             match_strike = re.search(r'(~~){1,}[^\s~].*?[^\s~](~~){1,}', string_to_reduce)
 
-        match_italic = re.search(r'(\*[^\s\*].*?[^\s\*]\*|)(\*(\*\*){1,}[^\s\*].+?[^\s\*](\*\*){1,}\*(?!\*))', string_to_reduce)
+        match_italic = re.search(r'(\*[^\s\*].*?[^\s\*]\*)|(\*(\*\*){1,}[^\s\*].+?[^\s\*](\*\*){1,}\*(?!\*))', string_to_reduce)
 
         while match_italic != None:
 
             before_italic_text = string_to_reduce[:match_italic.start()]
-            stripped_italic_inner_text = string[match_italic.start():match_italic.end()].replace('*', '')
+            stripped_italic_inner_text = string_to_reduce[match_italic.start():match_italic.end()].replace('*', '')
             after_italic_text = string_to_reduce[match_italic.end():]
 
             italic_text = f'<em>{stripped_italic_inner_text}</em>'
             
             string_to_reduce = before_italic_text + italic_text + after_italic_text
 
-            match_italic = re.search(r'(\*[^\s\*].*?[^\s\*]\*|)(\*(\*\*){1,}[^\s\*].+?[^\s\*](\*\*){1,}\*(?!\*))', string_to_reduce)
+            match_italic = re.search(r'(\*[^\s\*].*?[^\s\*]\*)|(\*(\*\*){1,}[^\s\*].+?[^\s\*](\*\*){1,}\*(?!\*))', string_to_reduce)
             
         return string_to_reduce
 
