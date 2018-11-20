@@ -48,7 +48,7 @@ class CodeBlock:
                 mode: "{self.mode}",
                 readOnly: false
             }}
-            ).setValue("{self.code}");
+            ).setValue(`{self.code}`);
         </script>
         '''
 
