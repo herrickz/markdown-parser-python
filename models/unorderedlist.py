@@ -10,7 +10,7 @@ class UnorderedList:
         for item in self.unordered_list_item_list:
             unordered_list_string += f'<li>{self.clean_unordered_list_item(item)}</li>'
 
-        return unordered_list_string
+        return f'<ul>{unordered_list_string}</ul>'
 
     def clean_unordered_list_item(self, item):
         return item.replace('-', '', 1).strip()
