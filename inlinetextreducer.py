@@ -10,7 +10,7 @@ class InlineTextReducer:
         while match_italic != None:
 
             before_match_text = string_to_reduce[:match_italic.start()]
-            stripped_italic_inner_text = string[match_italic.start()+1 : match_italic.end()-1]
+            stripped_italic_inner_text = string_to_reduce[match_italic.start()+1 : match_italic.end()-1]
             after_match_text = string_to_reduce[match_italic.end():]
 
             italic_text = f'<em>{stripped_italic_inner_text}</em>'
